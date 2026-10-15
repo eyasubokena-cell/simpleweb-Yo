@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main class="calculator">
+        <header class="top-bar">
+            <div>
+                <h1>Calculator</h1>
+                <p class="subtitle">Simple & Smart</p>
+            </div>
+            <button id="themeBtn" class="theme-btn" aria-label="Toggle theme">
+                ☀
+            </button>
+        </header>
+
+        <section class="display" aria-label="Calculator display">
+            <div id="previous" class="previous"></div>
+            <input
+                id="screen"
+                class="screen"
+                type="text"
+                value="0"
+                readonly
+                aria-label="Current result"
+            >
+        </section>
+
+        <section class="buttons" aria-label="Calculator buttons">
+            <button class="function" data-action="clear">AC</button>
+            <button class="function" data-action="delete">DEL</button>
+            <button class="function" data-action="percent">%</button>
+            <button class="operator" data-operator="/">÷</button>
+
+            <button data-number="7">7</button>
+            <button data-number="8">8</button>
+            <button data-number="9">9</button>
+            <button class="operator" data-operator="*">×</button>
+
+            <button data-number="4">4</button>
+            <button data-number="5">5</button>
+            <button data-number="6">6</button>
+            <button class="operator" data-operator="-">−</button>
+
+            <button data-number="1">1</button>
+            <button data-number="2">2</button>
+            <button data-number="3">3</button>
+            <button class="operator" data-operator="+">+</button>
+
+            <button class="function" data-action="sign">+/−</button>
+            <button data-number="0">0</button>
+            <button data-action="decimal">.</button>
+            <button class="equals" data-action="equals">=</button>
+        </section>
+
+        <section class="history">
+            <div class="history-heading">
+                <h2>History</h2>
+                <button id="clearHistory" class="clear-history">
+                    Clear
+                </button>
+            </div>
+            <ul id="historyList">
+                <li class="empty-history">Your calculations appear here.</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>Calculator Project · HTML, CSS & JavaScript</p>
+        </footer>
+    </main>
+
+</body>
+</html>

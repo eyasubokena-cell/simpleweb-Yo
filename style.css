@@ -1,0 +1,225 @@
+
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #eef2ff;
+    --card: #ffffff;
+    --text: #1e293b;
+    --muted: #64748b;
+    --button: #f1f5f9;
+    --button-hover: #e2e8f0;
+    --primary: #4f46e5;
+    --primary-hover: #4338ca;
+    --operator: #dbeafe;
+    --border: #e2e8f0;
+}
+
+body.dark {
+    --background: #0f172a;
+    --card: #1e293b;
+    --text: #f8fafc;
+    --muted: #94a3b8;
+    --button: #334155;
+    --button-hover: #475569;
+    --primary: #818cf8;
+    --primary-hover: #6366f1;
+    --operator: #263d60;
+    --border: #334155;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background 0.3s, color 0.3s;
+}
+
+.calculator {
+    width: 100%;
+    max-width: 390px;
+    padding: 24px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+}
+
+.top-bar,
+.history-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.theme-btn {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--button);
+    color: var(--text);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.display {
+    margin: 25px 0 20px;
+    padding: 18px;
+    min-height: 115px;
+    background: var(--button);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: right;
+    overflow: hidden;
+}
+
+.previous {
+    min-height: 24px;
+    color: var(--muted);
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+.screen {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text);
+    font-size: clamp(28px, 8vw, 38px);
+    font-weight: bold;
+    text-align: right;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.buttons button {
+    min-width: 0;
+    height: 58px;
+    border: none;
+    border-radius: 13px;
+    background: var(--button);
+    color: var(--text);
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s, background 0.15s;
+}
+
+.buttons button:hover {
+    background: var(--button-hover);
+}
+
+.buttons button:active {
+    transform: scale(0.94);
+}
+
+.buttons .function {
+    color: var(--primary);
+}
+
+.buttons .operator {
+    background: var(--operator);
+    color: var(--primary);
+}
+
+.buttons .equals {
+    background: var(--primary);
+    color: white;
+}
+
+.buttons .equals:hover {
+    background: var(--primary-hover);
+}
+
+.history {
+    margin-top: 25px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+}
+
+.history h2 {
+    font-size: 16px;
+}
+
+.clear-history {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+#historyList {
+    list-style: none;
+    margin-top: 12px;
+}
+
+#historyList li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+#historyList .empty-history {
+    color: var(--muted);
+    border: none;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+button:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 3px;
+}
+
+@media (max-width: 420px) {
+    body {
+        padding: 12px;
+    }
+
+    .calculator {
+        padding: 18px;
+    }
+
+    .buttons {
+        gap: 8px;
+    }
+
+    .buttons button {
+        height: 54px;
+    }
+}
